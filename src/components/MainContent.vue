@@ -3,10 +3,97 @@
 </script>
 
 <template>
-  <div>
-    <h1>Ciao</h1>
-  </div>
+  <main class="main-content">
+    <div class="container">
+      <div class="row">
+      <div v-for="n in 6" :key="n" class="col-4">
+        <img src="/img/1.webp" alt="">
+        <div class="info-product">
+          <h3 class="mark">Levi's</h3>
+          <p class="product-description">Relaxed Fit Tee Unisex</p>
+          <div>
+            <span class="sale">14,99 &euro; </span>
+            <span class="barred">29,99 &euro;</span>
+            <div class="heart">&#x2665;</div>
+            <div class="badge">
+              <div class="bg-red">50%</div>
+              <div class="bg-green">Sostenibilità</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
 </template>
 
 <style lang="scss" scoped>
+
+.main-content {
+  padding: 20px 20px;
+}
+
+.row {
+  row-gap: 10px;
+}
+
+.mark {
+  font-size: 17px;
+}
+
+.info-product {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.barred {
+  text-decoration: line-through;
+  font-size: 13px;
+}
+
+.sale {
+  color: red;
+  font-size: 13px;
+}
+
+.product-description {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.heart {
+  background-color: white;
+  width: 30px;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+
+.bg-red {
+  background-color: red;
+  color: white;
+  font-weight: 600;
+  padding: 5px;
+}
+
+.bg-green {
+  background-color: green;
+  color: white;
+  font-weight: 600;
+  padding: 5px;
+}
+
+.badge {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  bottom: 110px;
+  font-size: 13px;
+}
 </style>

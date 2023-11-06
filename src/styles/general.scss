@@ -25,3 +25,9 @@ a {
     display: flex;
     flex-wrap: wrap;
 }
+
+.col-4 {
+    flex-basis: calc(100% * 4 / 12);
+    padding: 10px;
+    position: relative;
+  }

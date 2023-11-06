@@ -18,9 +18,15 @@
       </ul>
       <img class="img-logo" src="/img/boolean-logo.png" alt="">
       <ul class="list">
-        <li>Icona</li>
-        <li>Icona</li>
-        <li>Icona</li>
+        <li>
+          <a href="#">Icona</a>
+        </li>
+        <li>
+          <a href="#">Icona</a>
+        </li>
+        <li>
+          <a href="#">Icona</a>
+        </li>
       </ul>
     </nav>
   </header>
