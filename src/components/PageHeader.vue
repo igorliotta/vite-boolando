@@ -1,5 +1,17 @@
 <script>
 
+export default {
+  data() {
+    return {
+      types: ['Uomo','Donna','Bambino'],
+      headerLogo: '/img/boolean-logo.png',
+    }
+  },
+  methods: {
+
+  }
+}
+
 </script>
 
 <template>
@@ -7,16 +19,16 @@
     <nav class="row navbar">
       <ul class="list">
         <li>
-          <a href="#">Uomo</a>
+          <a href="#">{{ types[0] }}</a>
         </li>
         <li>
-          <a href="#">Donna</a>
+          <a href="#">{{ types[1] }}</a>
         </li>
         <li>
-          <a href="#">Bambino</a>
+          <a href="#">{{ types[2] }}</a>
         </li>
       </ul>
-      <img class="img-logo" src="/img/boolean-logo.png" alt="">
+      <img class="img-logo" :src="headerLogo" alt="">
       <ul class="list">
         <li>
           <a href="#">Icona</a>
