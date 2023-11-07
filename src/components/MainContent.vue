@@ -21,7 +21,11 @@ export default {
   <main class="main-content">
     <div class="container">
       <div class="row">
-        <Product />
+        <div v-for="n in 6"
+        :key="n"
+        class="col-4">
+          <Product />
+        </div>
     </div>
     </div>
   </main>
