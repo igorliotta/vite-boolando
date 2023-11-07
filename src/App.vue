@@ -1,8 +1,15 @@
-<script setup>
-// import HelloWorld from './components/HelloWorld.vue'
+<script>
 import PageHeader from './components/PageHeader.vue'
 import MainContent from './components/MainContent.vue'
 import PageFooter from './components/PageFooter.vue'
+
+export default {
+  components: {
+   PageHeader,
+   MainContent,
+   PageFooter
+  }
+}
 </script>
 
 <template>
