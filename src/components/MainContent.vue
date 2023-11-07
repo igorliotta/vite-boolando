@@ -1,9 +1,18 @@
 <script>
-import Product from './Product.vue';
+import Product from './Product.vue'
+import productJson from '../db.json'
 
 export default {
   components: {
    Product,
+  },
+  data() {
+    return {
+      product: productJson,
+    }
+  },
+  created() {
+    console.log(this.product)
   }
 }
 </script>
