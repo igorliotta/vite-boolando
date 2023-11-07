@@ -1,17 +1,17 @@
 <script>
 
 export default {
-    props: {
-        item: {
-            type: Object,
-            required: true
-        }
-    }
+    // props: {
+    //     item: {
+    //         type: Object,
+    //         required: true
+    //     }
+    // }
 }
 </script>
 
 <template>
-    <div class="product">
+    <div>
         <img src="/img/1.webp" alt="">
         <div class="info-product">
             <h3 class="mark">Levi's</h3>
@@ -64,7 +64,7 @@ export default {
      align-items: center;
      font-size: 15px;
      position: absolute;
-     top: 20px;
+     top: 40px;
      right: 10px;
  }
 

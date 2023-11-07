@@ -1,6 +1,6 @@
 <script>
 import Product from './Product.vue'
-import productJson from '../db.json'
+import productsJson from '../db.json'
 
 export default {
   components: {
@@ -8,11 +8,11 @@ export default {
   },
   data() {
     return {
-      product: productJson,
+      products: productsJson.products
     }
   },
   created() {
-    console.log(this.product)
+    console.log(this.products)
   }
 }
 </script>
@@ -21,8 +21,8 @@ export default {
   <main class="main-content">
     <div class="container">
       <div class="row">
-        <div v-for="n in 6"
-        :key="n"
+        <div v-for="n in 6" 
+        :key="n" 
         class="col-4">
           <Product />
         </div>

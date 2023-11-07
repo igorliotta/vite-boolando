@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-      <div>
+      <div class="product">
         <Card />
       </div>
 </template>
