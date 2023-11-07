@@ -1,24 +1,27 @@
 <script>
 
 export default {
-    // props: {
-    //     item: {
-    //         type: Object,
-    //         required: true
-    //     }
-    // }
+    props: {
+        item: {
+            type: Object,
+            required: true
+        }
+    }
 }
 </script>
 
 <template>
-    <div>
-        <img src="/img/1.webp" alt="">
+    <div class="col-4">
+        <figure>
+            <img :src="'/img/' + item.frontImage" alt="">
+            <!-- <img :src="'/img/' + item.backImage" alt=""> -->
+        </figure>
         <div class="info-product">
-            <h3 class="mark">Levi's</h3>
-            <p class="product-description">Relaxed Fit Tee Unisex</p>
+            <h3 class="mark">{{ item.brand }}</h3>
+            <p class="product-description">{{ item.name }}</p>
             <div>
                 <span class="sale">14,99 &euro; </span>
-                <span class="barred">29,99 &euro;</span>
+                <span class="barred">{{ item.price }} &euro;</span>
                 <div class="heart">&#x2665;</div>
                 <div class="badge">
                     <div class="bg-red">50%</div>
@@ -89,4 +92,9 @@ export default {
      bottom: 110px;
      font-size: 13px;
  }
+
+ .img {
+    position: relative;
+ }
+
 </style>
