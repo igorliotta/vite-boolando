@@ -2,6 +2,7 @@
 import Card from './Card.vue'
 // import productsJson from '../db.json'
 import { store } from '../store'
+import axios from 'axios'
 
 export default {
   components: {
@@ -10,14 +11,19 @@ export default {
   data() {
     return {
       // products: productsJson.products,
-      store: store
+      store: store,
+      productsUrl: 'http://localhost:3000/products',
     }
   },
   created() {
     // console.log(this.products)
-    console.log(this.store)
+    axios.get(this.productsUrl).then(res => {
+      console.log(res.data)
+      this.store.products = res.data;
+    });
+
   }
-}
+} 
 </script>
 
 <template>
