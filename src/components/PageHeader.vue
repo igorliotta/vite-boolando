@@ -31,13 +31,13 @@ export default {
       <img class="img-logo" :src="headerLogo" alt="">
       <ul class="list">
         <li>
-          <a href="#">Icona</a>
+          <a href="#"><font-awesome-icon icon="fa-solid fa-user" /></a>
         </li>
         <li>
-          <a href="#">Icona</a>
+          <a href="#"><font-awesome-icon icon="fa-solid fa-heart" /></a>
         </li>
         <li>
-          <a href="#">Icona</a>
+          <a href="#"><font-awesome-icon icon="fa-solid fa-cart-shopping" /></a>
         </li>
       </ul>
     </nav>
