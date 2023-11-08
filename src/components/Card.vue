@@ -12,28 +12,28 @@ export default {
 
 <template>
     <div class="col-4">
-        <figure>
-            <img :src="'/img/' + item.frontImage" alt="">
-            <!-- <img :src="'/img/' + item.backImage" alt=""> -->
+        <figure class="img-container">
+            <img class="img" :src="'/img/' + item.frontImage" alt="">
+            <img class="img-back" :src="'/img/' + item.backImage" alt="">
         </figure>
         <div class="info-product">
             <h3 class="mark">{{ item.brand }}</h3>
             <p class="product-description">{{ item.name }}</p>
             <div>
-                <span class="sale">14,99 &euro; </span>
-                <span class="barred">{{ item.price }} &euro;</span>
+                <!-- <span class="sale">14,99 &euro; </span> -->
+                <span>{{ item.price }} &euro;</span>
                 <div class="heart">&#x2665;</div>
                 <div class="badge">
-                    <div class="bg-red">50%</div>
-                    <div class="bg-green">Sostenibilità</div>
+                    <div :class="{ 'bg-red': badge.type === 'discount', 'bg-green': badge.value === 'Sostenibilità' }"
+                        v-for="(badge, i) in item.badges" :key="i">{{
+                            badge.value }}</div>
                 </div>
             </div>
         </div>
     </div>
 </template>
 
-<style lang="scss" scoped> 
- .mark {
+<style lang="scss" scoped> .mark {
      font-size: 17px;
  }
 
@@ -95,6 +95,25 @@ export default {
 
  .img {
     position: relative;
+ }
+
+.img-back {
+    position: absolute;
+    opacity: 0;
+    padding: 5px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+ 
+
+ .img:hover {
+     opacity: 0;
+ }
+
+ .img-back:hover {
+    opacity: 1;
  }
 
 </style>
