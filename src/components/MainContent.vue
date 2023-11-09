@@ -14,16 +14,19 @@ export default {
       store: store,
       productsUrl: 'http://localhost:3000/products',
       open: false,
+      currentProduct: {}
     }
   },
   methods: {
-    showModal() {
-      console.log('show modal')
+    showModal(product) {
+      console.log('show modal',product)
       this.open = true
+      this.currentProduct = product;
     },
     closeModal() {
       console.log('close modal')
       this.open = false
+      this.currentProduct = {}
     }
   },
   created() {
@@ -49,13 +52,24 @@ export default {
     <div v-if="open" class="modal">
       <div class="modal-card">
         <div class="modal-card-header">
-          <span>
-            Titolo
-          </span>
-          <font-awesome-icon @click="closeModal()" icon="fa-solid fa-circle-xmark" />
+          <figure class="miniature">
+            <img class="miniature-img miniature-front-img" :src="'/img/' + currentProduct.frontImage" alt="">
+            <img class="miniature-img miniature-back-img" :src="'/img/' + currentProduct.backImage" alt="">
+          </figure>
         </div>
         <div class="modal-card-body">
-          <p>Contenuto del modale</p>
+          <font-awesome-icon class="mark" @click="closeModal()" icon="fa-solid fa-circle-xmark" />
+         <div class="info-product">
+          <p>
+            <span class="decoration-text">Brand:</span> <span class="weight-text">{{ currentProduct.brand }}</span>
+          </p>
+          <p>
+           <span class="decoration-text">Type of Product:</span> <span class="weight-text">{{ currentProduct.name }}</span>
+          </p>
+          <p>
+           <span class="decoration-text">Price:</span> <span class="weight-text">{{ currentProduct.price }}</span>
+          </p>
+         </div>
         </div>
       </div>
     </div>
@@ -83,7 +97,10 @@ export default {
   padding: 20px;
   width: 100%;
   max-width: 550px;
-  box-shadow: 0px 0px 20px rgba(238, 109, 3, 1);
+  box-shadow: 0px 0px 20px rgb(255, 115, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .modal::after {
@@ -94,15 +111,77 @@ export default {
   left: 0;
   right: 0;
   z-index: 40;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-card-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  font-weight: 700;
 }
 
+.miniature {
+  width: 230px;
+  aspect-ratio: 9/12;
+  border: 3px solid rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.miniature-img {
+  width: 100%;
+  aspect-ratio: 9/12;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.miniature-front-img {
+  opacity: 1;
+}
+
+.miniature-front-img:hover {
+  opacity: 0;
+}
+
+.miniature-back-img {
+  opacity: 0;
+}
+
+.miniature-back-img:hover {
+  opacity: 1;
+}
+
+.modal-card-body {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  gap: 5px;
+}
+
+.info-product {
+  text-align: left;
+  font-size: 13px;
+}
+
+.mark {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.decoration-text {
+  padding: 5px;
+  text-decoration: underline;
+}
+
+.weight-text {
+  font-weight: 700;
+}
 
 
 </style>

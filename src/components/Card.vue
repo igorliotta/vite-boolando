@@ -23,7 +23,7 @@ export default {
         </figure>
         <div class="info-product">
             <h3 class="mark">{{ item.brand }}</h3>
-            <p @click="$emit('show')" class="product-description">{{ item.name }}</p>
+            <p @click="$emit('show', item)" class="product-description">{{ item.name }}</p>
             <div>
                 <!-- <span class="sale">14,99 &euro; </span> -->
                 <span>{{ item.price }} &euro;</span>
