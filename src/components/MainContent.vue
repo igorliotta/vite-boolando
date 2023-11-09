@@ -67,7 +67,7 @@ export default {
            <span class="decoration-text">Type of Product:</span> <span class="weight-text">{{ currentProduct.name }}</span>
           </p>
           <p>
-           <span class="decoration-text">Price:</span> <span class="weight-text">{{ currentProduct.price }}</span>
+           <span class="decoration-text">Price:</span> <span class="weight-text">{{ currentProduct.price }} &euro;</span>
           </p>
          </div>
         </div>
