@@ -18,14 +18,8 @@ export default {
   <header class="page-header">
     <nav class="row navbar">
       <ul class="list">
-        <li>
-          <a href="#">{{ types[0] }}</a>
-        </li>
-        <li>
-          <a href="#">{{ types[1] }}</a>
-        </li>
-        <li>
-          <a href="#">{{ types[2] }}</a>
+        <li v-for="type in types">
+          <a href="#">{{ type }}</a>
         </li>
       </ul>
       <img class="img-logo" :src="headerLogo" alt="">
