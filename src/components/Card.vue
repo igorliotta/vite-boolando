@@ -27,7 +27,7 @@ export default {
             <div>
                 <!-- <span class="sale">14,99 &euro; </span> -->
                 <span>{{ item.price }} &euro;</span>
-                <div class="heart">&#x2665;</div>
+                <div :class="{'c-red': item.isInFavorites === true}" class="heart">&#x2665;</div>
                 <div class="badge">
                     <div :class="{ 'bg-red': badge.type === 'discount', 'bg-green': badge.value === 'Sostenibilità' }"
                         v-for="(badge, i) in item.badges" :key="i">{{
@@ -119,6 +119,10 @@ export default {
 
  .img-back:hover {
     opacity: 1;
+ }
+
+ .c-red {
+    color: red;
  }
 
 
